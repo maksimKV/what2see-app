@@ -18,14 +18,19 @@ export class RegisterFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.form = fb.group({
-      firstname: '',
-      lastname: '',
-      email: '',
-      password: ''
-    })
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+    });
    }
 
   ngOnInit() {
+  }
+
+  addUser(post) {
+    //this.firstname = post.firstname;
+    //this.name = post.name;
   }
 
 }

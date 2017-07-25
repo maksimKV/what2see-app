@@ -1,11 +1,25 @@
 <h1>Registartion form</h1>
 <p>Please fill in the following details</p>
 
-<form novalidate [formGroup]="form">
+<form novalidate [formGroup]="form" (ngSubmit)="addUser(form.value)">
+
+  <label for="firstname">First Name: </label>
   <input formControlName="firstname" placeholder="John..." /> <br />
+  <p *ngIf="form.controls.firstname.errors">This field is required!</p>
+
+  <label for="lastname">Family Name: </label>
   <input formControlName="lastname" placeholder="Smith..." /> <br />
+  <p *ngIf="form.controls.lastname.errors">This field is required!</p>
+
+  <label for="email">Email: </label>
   <input formControlName="email" placeholder="example@gmail.com" /> <br />
+  <p *ngIf="form.controls.email.errors">This field is required and it must be a valid email address!</p>
+
+  <label for="password">Password: </label>
   <input formControlName="password" placeholder="Your password..." />
+  <p *ngIf="form.controls.password.errors">The password is required, it must be a minimum of 6 characters</p>
 </form>
 
 <p>Form Values: {{ form.value | json }}</p>
+
+<p>Form Status: {{ form.status }}</p>
