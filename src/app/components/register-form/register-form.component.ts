@@ -10,11 +10,20 @@ import {
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.css']
+  styleUrls: ['./register-form.component.css'],
+  providers: [FormBuilder]
 })
 export class RegisterFormComponent implements OnInit {
+  private form: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    this.form = fb.group({
+      firstname: '',
+      lastname: '',
+      email: '',
+      password: ''
+    })
+   }
 
   ngOnInit() {
   }

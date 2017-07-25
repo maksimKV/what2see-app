@@ -1,6 +1,11 @@
-<form novalidate>
-  <input name="firstname" placeholder="John..." /> <br />
-  <input name="lastname" placeholder="Smith..." /> <br />
-  <input name="email" placeholder="example@gmail.com" /> <br />
-  <input name="password" placeholder="Your password..." />
+<h1>Registartion form</h1>
+<p>Please fill in the following details</p>
+
+<form novalidate [formGroup]="form">
+  <input formControlName="firstname" placeholder="John..." /> <br />
+  <input formControlName="lastname" placeholder="Smith..." /> <br />
+  <input formControlName="email" placeholder="example@gmail.com" /> <br />
+  <input formControlName="password" placeholder="Your password..." />
 </form>
+
+<p>Form Values: {{ form.value | json }}</p>
