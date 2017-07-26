@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EqualValidatorDirective } from './directives/equal-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    EqualValidatorDirective
   ],
   imports: [
     BrowserModule,

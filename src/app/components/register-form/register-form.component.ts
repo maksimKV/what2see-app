@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EqualValidatorDirective } from '../../directives/equal-validator.directive';
 
 import {
   FormBuilder,
@@ -21,7 +22,9 @@ export class RegisterFormComponent implements OnInit {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+      matchPassword: ''
+      //matchPassword: ['', Validators.required, EqualValidatorDirective]
     });
    }
 

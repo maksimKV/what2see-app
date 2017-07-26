@@ -18,6 +18,10 @@
   <label for="password">Password: </label>
   <input formControlName="password" placeholder="Your password..." />
   <p *ngIf="form.controls.password.errors">The password is required, it must be a minimum of 6 characters</p>
+
+  <label for="matchPassword">Confirm Password: </label>
+  <input formControlName="matchPassword" placeholder="confirm password..." required validateEqual="password" />
+  <p *ngIf="form.controls.matchPassword.errors">The password does not match!</p>
 </form>
 
 <p>Form Values: {{ form.value | json }}</p>
