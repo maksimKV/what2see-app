@@ -22,7 +22,7 @@ export class RegisterFormComponent implements OnInit {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+      password: ['', Validators.compose([Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/)])],
       matchPassword: ''
       //matchPassword: ['', Validators.required, EqualValidatorDirective]
     });
@@ -34,6 +34,10 @@ export class RegisterFormComponent implements OnInit {
   addUser(post) {
     //this.firstname = post.firstname;
     //this.name = post.name;
+
+    if (this.form.valid) {
+      console.log("Form Submitted!");
+    }
   }
 
 }
