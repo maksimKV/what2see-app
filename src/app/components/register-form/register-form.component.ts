@@ -31,12 +31,19 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  addUser(post) {
-    //this.firstname = post.firstname;
-    //this.name = post.name;
-
+  onSubmit(formValues :any) : void {
+    
+    // Make sure the form is valid, before proceeding
     if (this.form.valid) {
-      console.log("Form Submitted!");
+      let firstname = formValues.firstname;
+      let lastname = formValues.lastname;
+      let email = formValues.email;
+      let password = formValues.password;
+
+      console.log("First name: " + firstname);
+      console.log("Last name: " + lastname);
+      console.log("Email: " + email);
+      console.log("Password: " + password);
     }
   }
 
