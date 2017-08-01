@@ -7,6 +7,8 @@ import { RegisterFormComponent } from './components/register-form/register-form.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EqualValidatorDirective } from './directives/equal-validator.directive';
 
+import { AlertModule } from 'ngx-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { EqualValidatorDirective } from './directives/equal-validator.directive'
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
