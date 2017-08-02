@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+#registrationForm .alert {
+    padding: 5px;
+}
+
+#registrationForm .col-sm-6, .col-sm-12 {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-right: 15px;
+}
