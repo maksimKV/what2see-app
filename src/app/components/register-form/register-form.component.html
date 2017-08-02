@@ -10,7 +10,7 @@
       <div class="col-sm-6">
         <label for="firstname">First Name: </label>
         <input formControlName="firstname" class="form-control" placeholder="John..." /> <br />
-        <alert type="danger" *ngIf="form.controls.firstname.errors">This field is required!</alert>
+        <alert type="danger" *ngIf="form.controls.firstname.errors && (form.controls.firstname.dirty || form.controls.firstname.touched)">This field is required!</alert>
       </div>
     </div>
 
@@ -18,7 +18,7 @@
       <div class="col-sm-6">
         <label for="lastname">Family Name: </label>
         <input formControlName="lastname" placeholder="Smith..." class="form-control" /> <br />
-        <alert type="danger" *ngIf="form.controls.lastname.errors">This field is required!</alert>
+        <alert type="danger" *ngIf="form.controls.lastname.errors && (form.controls.lastname.dirty || form.controls.lastname.touched)">This field is required!</alert>
       </div>
     </div>
 
@@ -27,7 +27,7 @@
         <label for="password">Password: </label>
         <input type="password" class="form-control" formControlName="password"/>
         <br _ngcontent-c1="">
-        <alert type="danger" *ngIf="form.controls.password.errors">The password is required! It must contain a lower and upper case characters and a number. It must be a minimum of 6 characters.</alert>
+        <alert type="danger" *ngIf="form.controls.password.errors && (form.controls.password.dirty || form.controls.password.touched)">The password is required! It must contain a lower and upper case characters and a number. It must be a minimum of 6 characters.</alert>
       </div>
     </div>
 
@@ -35,7 +35,7 @@
       <div class="col-sm-6">
         <label for="email">Email: </label>
         <input formControlName="email" placeholder="example@gmail.com" class="form-control"/> <br />
-        <alert type="danger" *ngIf="form.controls.email.errors">This field is required and it must be a valid email address!</alert>
+        <alert type="danger" *ngIf="form.controls.email.errors && (form.controls.email.dirty || form.controls.email.touched)">This field is required and it must be a valid email address!</alert>
       </div>
     </div>
 
@@ -44,7 +44,7 @@
         <label for="matchPassword">Confirm Password: </label>
         <input type="password" class="form-control" formControlName="matchPassword" required validateEqual="password" />
         <br _ngcontent-c1="">
-        <alert type="danger" *ngIf="form.controls.matchPassword.errors">The password does not match!</alert>
+        <alert type="danger" *ngIf="form.controls.matchPassword.errors && (form.controls.matchPassword.dirty || form.controls.matchPassword.touched)">The password does not match!</alert>
       </div>
     </div>
 
