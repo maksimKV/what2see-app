@@ -24,7 +24,6 @@ export class RegisterFormComponent implements OnInit {
       email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.compose([Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/)])],
       matchPassword: ''
-      //matchPassword: ['', Validators.required, EqualValidatorDirective]
     });
    }
 
@@ -39,11 +38,14 @@ export class RegisterFormComponent implements OnInit {
       let lastname = formValues.lastname;
       let email = formValues.email;
       let password = formValues.password;
-
-      console.log("First name: " + firstname);
-      console.log("Last name: " + lastname);
-      console.log("Email: " + email);
-      console.log("Password: " + password);
+    }
+    // Trigger validation if form is not valid
+    else {
+      this.form.controls.firstname.markAsDirty();
+      this.form.controls.lastname.markAsDirty();
+      this.form.controls.email.markAsDirty();
+      this.form.controls.password.markAsDirty();
+      this.form.controls.matchPassword.markAsDirty();
     }
   }
 
